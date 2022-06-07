@@ -3,7 +3,6 @@
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
 ?>
-
 <div class="bodyContainer">
     <div class="optionsContainer">
       <?php
@@ -11,46 +10,28 @@
       ?>
     </div>
     <div class="showsContainer">
-      <div class="screenOptionContainer">
-        <div class="nameOptionContainer">
-          <div class="option">Agendar una cita</div>
-        </div>
-        <div class="formContainer">
-          <div class="formAdd">
-            <form
-              action="../../recepcionistFunctions/recepcionistAddUpdate.php"
-              method="post"
-              class="form"
-            >
-              <div class="form">
-                <input
-                  type="text"
-                  placeholder="id del cliente"
-                  name="idPatient"
-                  id=""
-                  class="inputTextDesign"
-                />
-                <input
-                  type="date"
-                  placeholder="Fecha"
-                  name="patientDate"
-                  id=""
-                  class="inputTextDesign"
-                />
-                <input
-                  type="time"
-                  placeholder="Hora"
-                  name="patientTimeDate"
-                  id=""
-                  class="inputTextDesign"
-                />
-                <textarea
-                  placeholder="Diagnóstico"
-                  name="Diagnosis"
-                  id=""
-                  class="inputTextDesign Diagnosis"
-                ></textarea>
-                <button class="buttonAdd" name="btnAdd">
+        <div class="screenOptionContainer">
+            <div class="nameOptionContainer">
+                <div class="option">Bienvenid@</div>
+            </div>
+            <div class="formContainer">
+                <div class="formAdd">
+<<<<<<< HEAD
+                    <form action="" method="post" class="form">
+                        <div class="form">
+                            <input type="text" placeholder="Nombre(s) del paciente" name="namePatient" autocapi
+                                class="inputTextDesign" />
+                            <input type="text" placeholder="Apellido paterno del paciente" name="middleName"
+                                class="inputTextDesign" />
+                            <input type="text" placeholder="Apellido materno del paciente" name="lastName"
+                                class="inputTextDesign" />
+                            <input type="date" placeholder="Fecha" name="patientDate" class="inputTextDesign" />
+                            <input type="time" placeholder="Hora" name="patientTimeDate" class="inputTextDesign" />
+                            <textarea placeholder="Diagnóstico" name="Diagnosis"
+                                class="inputTextDesign Diagnosis"></textarea>
+                              <!-- <input type="submit" name="submit" value="guardar" class="buttonAdd" /> -->
+                            
+                            <button class="buttonAdd" name="btnAdd">
                   <span>Agendar</span>
                   <svg
                     width="34"
@@ -72,12 +53,13 @@
                     ></path>
                   </svg>
                 </button>
-              </div>
-            </form>
-          </div>
+                        </div>
+                    </form>
+=======
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
+                </div>
+            </div>
         </div>
-        <div class="underContainer"></div>
-      </div>
     </div>
 </div>
 <?php

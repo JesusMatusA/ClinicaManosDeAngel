@@ -9,5 +9,5 @@
       href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Recepcionista</title>
+    <title>Doctor</title>
   </head>

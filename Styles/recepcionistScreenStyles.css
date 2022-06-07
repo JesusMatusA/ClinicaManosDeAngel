@@ -4,11 +4,23 @@
   font-family: "Questrial", sans-serif;
 }
 
+body {
+    background-color: #e4e4e4;
+}
+
 .navigatorBarContainer {
+<<<<<<< HEAD
   display: flex;
   width: 100%;
   height: 15vh;
   background-color: #1555aa;
+=======
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    background-color: #1555aa;
+    box-shadow: 0px 2px 2px;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
 
 .logoContainer {
@@ -32,6 +44,7 @@
 }
 
 .imgLogo {
+<<<<<<< HEAD
   margin-left: 12vh;
   width: 17vh;
   height: 17vh;
@@ -41,7 +54,18 @@
   display: flex;
   width: 100%;
   height: 81vh;
-  background-color: #f5f5f5;
+  background-color: #e4e4e4;
+  /* background-color: #f5f5f5; */
+=======
+    margin-left: 12vh;
+    width: 18vh;
+}
+
+.bodyContainer {
+    display: flex;
+    width: 100%;
+    height: 81vh;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
 
 .optionsContainer {
@@ -53,14 +77,29 @@
 }
 
 .menuContainer {
+<<<<<<< HEAD
   display: flex;
   width: 100%;
-  height: 100%;
-  border-right: 2px solid black;
-  border-top-right-radius: 5%;
-  border-bottom-right-radius: 5%;
+  height: 97%;
+  /* border-right: 2px solid black;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%; */
   flex-wrap: wrap;
-  background-color: #c1c1c1;
+  background-color: #8f8c8c;
+  margin-left: 10px;
+  padding: 5px;
+  box-shadow: 2px 2px 2px;
+=======
+    display: flex;
+    width: 100%;
+    height: 90%;
+    flex-wrap: wrap;
+    background-color: #577194;
+    margin-left: 10px;
+    border: solid 1px #435772;
+    padding: 5px;
+    box-shadow: 2px 2px 2px;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
 
 .userContainer {
@@ -70,6 +109,7 @@
 }
 
 .imgRecepcionistContainer {
+<<<<<<< HEAD
   display: flex;
   width: 100%;
   height: 80%;
@@ -87,6 +127,27 @@
 .userType {
   text-align: center;
   font-size: 3vh;
+=======
+    display: flex;
+    width: 100%;
+    /* height: 80%; */
+    justify-content: center;
+    align-items: center;
+}
+
+.recepcionistLogo {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    /* height: 62%; */
+}
+
+.userType {
+    text-align: center;
+    font-size: 4vh;
+    font-family: "Poiret One";
+    font-weight: bold;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
 
 .buttonsContainer {
@@ -109,6 +170,7 @@
   border: none;
   background: none;
 }
+
 .btnOption:before {
   content: "";
   position: absolute;
@@ -235,11 +297,20 @@
 }
 
 .screenOptionContainer {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   width: 100%;
   height: 98%;
   flex-wrap: wrap;
+=======
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+    flex-wrap: wrap;
+    /* background-color: blue; */
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
 
 .nameOptionContainer {
@@ -255,11 +326,20 @@
 }
 
 .formContainer {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 65%;
+=======
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* background-color: purple; */
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
 
 .formAdd {
@@ -284,7 +364,10 @@
   outline: 0;
   border-width: 0 0 2px;
   border-color: #1555aa;
-  border-radius: 1vh;
+  border-radius: 3px;
+  padding: 1vh;
+  font-size: 2.3vh;
+  box-shadow: 2px 2px 2px;
 }
 
 .inputTextDesign:focus {
@@ -292,17 +375,18 @@
 }
 
 .Diagnosis {
-  height: 12vh;
+<<<<<<< HEAD
+  overflow-y: scroll;
+  resize: none;
+  height: 10vh;
+  font-size: 2vh;
+=======
+    overflow-y: scroll;
+    resize: none;
+    height: 25vh;
+    font-size: 2vh;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
-/* .btnAddAppointment {
-  margin-top: 1vh;
-  width: 14vh;
-  height: 5vh;
-  padding: 0.5vh;
-  background-color: #234567;
-  border-color: #234567;
-  color: #f5f5f5;
-} */
 
 .btnPhoto {
   width: 50vh;
@@ -349,6 +433,7 @@
 }
 
 .underContainer {
+<<<<<<< HEAD
   width: 100%;
   height: 20%;
 }
@@ -360,9 +445,199 @@
   background-color: #292c30;
   justify-content: center;
   align-items: center;
+=======
+    width: 100%;
+    height: 5%;
+    background-color: red;
+}
+
+.footerContainer {
+    display: flex;
+    width: 100%;
+    height: 4vh;
+    background-color: #292c30;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 2px 2px;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }
 
 .textFooter {
   color: #f5f5f5;
   font-size: 2.2vh;
+}
+
+<<<<<<< HEAD
+.table {
+  border-collapse: collapse;
+  font-size: 12pt;
+  font-family: "arial";
+  width: 50%;
+  box-shadow: 2px 2px 2px;
+}
+
+.table .tableTH {
+  text-align: center;
+  padding: 10px;
+  background: #1555aa;
+  color: #ffff;
+}
+
+.table .tableTR:nth-child(odd) {
+  background-color: #fff;
+}
+
+.table .tableTR {
+  background-color: #c1c1c1;
+}
+.table .tableTD {
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+=======
+/* tabla citas */
+.tableD {
+    border-collapse: collapse;
+    font-size: 2.3vh;
+    font-family: "arial";
+    width: 80%;
+    box-shadow: 2px 2px 2px;
+}
+
+.tableTHDL {
+    text-align: center;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.tableD .tableTHD {
+    text-align: justify;
+    padding: 15px;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.tableD .tableTRD:nth-child(odd) {
+    background-color: #fff;
+}
+
+.tableD .tableTRD {
+    background-color: #c1c1c1;
+}
+
+.tableD .tableTDD {
+    font-weight: bold;
+    padding: 10px;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
+}
+
+.tableTDDL {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* tabla clientes */
+.tableC {
+    border-collapse: collapse;
+    font-size: 2.3vh;
+    font-family: "arial";
+    width: 80%;
+    box-shadow: 2px 2px 2px;
+}
+
+.tableTHCL {
+    text-align: center;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.tableC .tableTHC {
+    text-align: justify;
+    padding: 15px;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.tableC .tableTRC:nth-child(odd) {
+    background-color: #fff;
+}
+
+.tableC .tableTRC {
+    background-color: #c1c1c1;
+}
+
+.tableC .tableTDC {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.tableTDCL {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* LINKS de la tabla */
+
+.link_a {
+  color: #292c30;
+  text-decoration: none;
+}
+
+.link_a:hover {
+  color: #1555aa;
+}
+
+<<<<<<< HEAD
+.msg_save {
+  background-color: #20c055c5;
+  border: solid 3px #198a3fcc;
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 5px;
+  color: #03270bcb;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.no {
+  user-select: none;
+=======
+/* paginador */
+.paginador ul {
+    padding: 15px;
+    list-style: none;
+    background: #fff;
+    margin-top: 15px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.paginador a,
+.pageSelected {
+    color: #428bca;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    width: 1.2vh;
+}
+
+.paginador a:hover {
+    background-color: #1555aa;
+    color: #fff;
+}
+
+.pageSelected {
+    color: #ffff;
+    background: #428bca;
+    border: 1px solid #428bca;
+}
+
+.notItemOne option:first-child {
+    display: none;
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
 }

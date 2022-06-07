@@ -1,6 +1,6 @@
 <?php
     $host = "localhost";
-    $bd =   "manosdeangel";
+    $bd =   "clinicamanosdeangel";
     $user=  "root";
     $pass=  "";
 

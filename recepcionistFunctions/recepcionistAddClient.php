@@ -8,7 +8,7 @@ include("../DBConnection/connect.php");
     $consulta = "INSERT INTO pacientes (nombres, aPaterno, aMaterno, correo, telefono) 
     VALUES ('$namePatient', '$firstLasNamePatient', '$secondLastNamePatient', '$emailPatient',
     '$contactPatient')";
-    $resultadoAdd = mysqli_query($connect,$consulta);
+    $resultadoAdd = mysqli_query($connection,$consulta);
     if($resultadoAdd){
         ?>
         <script>

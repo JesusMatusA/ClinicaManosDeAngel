@@ -1,38 +1,23 @@
 let btnAddDate = document.getElementById("btnAddDateScreen");
-let btnUpdateDate = document.getElementById("btnAUpdateDateScreen");
 let btnSeeDate = document.getElementById("btnSeeDateScreen");
-let btnDelete = document.getElementById("btnDeleteDateScreen");
 let btnAddClient = document.getElementById("btnAddClientScreen");
-let btnUpdateClient = document.getElementById("btnUpdateClientScreen");
+let btnSeeClient = document.getElementById("btnSeeClientScreen");
+let btnLogOut = document.getElementById("btnLogout");
 
 // btnAddDate.addEventListener(
 //     "click",
 //     () => (location.href = "../recepcionistScreens/firstScreen.php")
 // );
-// btnUpdateDate.addEventListener(
-//     "click",
-//     () => (location.href = "../recepcionistScreens/UpdateScreen.php")
-// );
-// btnSeeDate.addEventListener(
-//     "click",
-//     () => (location.href = "../recepcionistScreens/AddClientScreen.php")
-// );
-// btnDelete.addEventListener(
-//     "click",
-//     () => (location.href = "../recepcionistScreens/DeleteScreen.php")
-// );
-// btnAddClient.addEventListener(
-//     "click",
-//     () => (location.href = "../recepcionistScreens/AddClientScreen.php")
-// );
-// btnUpdateClient.addEventListener(
-//     "click",
-//     () => (location.href = "../recepcionistScreens/UpdateClientScreen.php")
-// );
-
-btnAddDate.addEventListener("click", () => alert("firstScreen"));
-btnUpdateDate.addEventListener("click", () => alert("UpdateDate"));
-btnSeeDate.addEventListener("click", () => alert("SeeDate"));
-btnDelete.addEventListener("click", () => alert("Delete"));
-btnAddClient.addEventListener("click", () => alert("AddClient"));
-btnUpdateClient.addEventListener("click", () => alert("UpdateClient"));
+btnSeeDate.addEventListener(
+    "click",
+    () => (location.href = "../recepcionistScreens/SeeDateScreen.php")
+);
+btnAddClient.addEventListener(
+    "click",
+    () => (location.href = "../recepcionistScreens/AddClientScreen.php")
+);
+btnSeeClient.addEventListener(
+    "click",
+    () => (location.href = "../recepcionistScreens/SeeClientScreen.php")
+);
+btnLogOut.addEventListener("click", () => (location.href = "../../logout.php"));

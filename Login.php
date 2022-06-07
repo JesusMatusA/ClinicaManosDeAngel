@@ -17,7 +17,7 @@
             $stmt->execute();
             $session = $stmt->fetch(PDO::FETCH_ASSOC);
             $connection=null;
-            if($session){
+            if(isset($session)){
                 $_SESSION['user'][0]= $session["usuario"];
                 $_SESSION['user'][1]= $session["puesto"];
 
@@ -48,7 +48,11 @@
             href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined"
         />
         <link
-            href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&family=Lato:ital,wght@1,300&family=Roboto+Flex:opsz@8..144&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:wght@300&display=swap"
             rel="stylesheet"
         />
         <title>Login</title>
