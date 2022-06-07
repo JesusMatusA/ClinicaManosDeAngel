@@ -1,0 +1,368 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Questrial", sans-serif;
+}
+
+.navigatorBarContainer {
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  background-color: #1555aa;
+}
+
+.logoContainer {
+  display: flex;
+  width: 10%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nameContainer {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 35px;
+  color: #f5f5f5;
+  font-family: "Poiret One", cursive;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgLogo {
+  margin-left: 12vh;
+  width: 17vh;
+  height: 17vh;
+}
+
+.bodyContainer {
+  display: flex;
+  width: 100%;
+  height: 81vh;
+  background-color: #f5f5f5;
+}
+
+.optionsContainer {
+  display: flex;
+  width: 15%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-right: 2px solid black;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+  flex-wrap: wrap;
+  background-color: #c1c1c1;
+}
+
+.userContainer {
+  display: block;
+  width: 100%;
+  height: 30%;
+}
+
+.imgRecepcionistContainer {
+  display: flex;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.recepcionistLogo {
+  display: flex;
+  justify-content: center;
+  width: 47%;
+  height: 62%;
+}
+
+.userType {
+  text-align: center;
+  font-size: 3vh;
+}
+
+.buttonsContainer {
+  display: flex;
+  width: 100%;
+  height: 15%;
+  flex-wrap: wrap;
+}
+
+.btnOption {
+  display: flex;
+  width: 100%;
+  height: 15.6%;
+  padding-left: 1.2vh;
+  font-size: 1.5vh;
+  position: relative;
+  margin: auto;
+  padding: 10px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+.btnOption:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #4e8ad8;
+  width: 5.2vh;
+  height: 5.2vh;
+  transition: all 0.3s ease;
+}
+
+.btnOption span {
+  position: relative;
+
+  font-size: 2.1vh;
+  font-weight: 530;
+  letter-spacing: 0.05em;
+  color: black;
+}
+
+.btnOption svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.btnOption:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.btnOption:hover svg {
+  transform: translateX(0);
+}
+
+.btnOption:active {
+  transform: scale(0.95);
+}
+
+.logoutContainer {
+  display: flex;
+  width: 100%;
+  height: 55%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.btnLogout {
+  margin: 0vh 1vh 1vh 0vh;
+  --primary-color: #4e8ad8;
+  --secondary-color: #f5f5f5;
+  --hover-color: #292c30;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 0.7em 1.4em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.btnLogout .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnLogout .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btnLogout .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.btnLogout:hover {
+  background-color: var(--hover-color);
+}
+
+.btnLogout:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btnLogout:hover .arrow:before {
+  right: 0;
+}
+
+.showsContainer {
+  display: flex;
+  width: 85%;
+  height: 100%;
+  /* background-color: red; */
+}
+
+.screenOptionContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 98%;
+  flex-wrap: wrap;
+}
+
+.nameOptionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+}
+
+.option {
+  font-size: 4vh;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65%;
+}
+
+.formAdd {
+  display: flex;
+  width: 40%;
+  height: 100%;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+.form {
+  width: 75%;
+  height: 100%;
+  /* background-color: darkgoldenrod; */
+}
+
+.inputTextDesign {
+  width: 50vh;
+  height: 4.8vh;
+  margin-bottom: 1.5vh;
+  background-color: #b1dae7;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #1555aa;
+  border-radius: 1vh;
+}
+
+.inputTextDesign:focus {
+  border-color: #234567;
+}
+
+.txtarea {
+  height: 12vh;
+}
+/* .btnAddAppointment {
+  margin-top: 1vh;
+  width: 14vh;
+  height: 5vh;
+  padding: 0.5vh;
+  background-color: #234567;
+  border-color: #234567;
+  color: #f5f5f5;
+} */
+
+.btnPhoto {
+  width: 50vh;
+  height: 4.8vh;
+  margin-bottom: 1.5vh;
+  background-color: #b1dae7;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #1555aa;
+  border-radius: 1vh;
+}
+
+.buttonAdd {
+  margin-top: 1.5vh;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica, "sans-serif";
+  transition: all 0.2s;
+  padding: 8px 12px;
+  border-radius: 100px;
+  background: #b1dae7;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.buttonAdd:hover {
+  background: #1555aa;
+}
+
+.buttonAdd > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.buttonAdd:hover svg {
+  transform: translateX(5px);
+}
+
+.buttonAdd:active {
+  transform: scale(0.95);
+}
+
+.underContainer {
+  width: 100%;
+  height: 20%;
+}
+
+.footerContainer {
+  display: flex;
+  width: 100%;
+  height: 4vh;
+  background-color: #292c30;
+  justify-content: center;
+  align-items: center;
+}
+
+.textFooter {
+  color: #f5f5f5;
+  font-size: 2.2vh;
+}
