@@ -2,7 +2,6 @@
   include("../../Components/requeriments.php");
   include("../../Components/doctorComponents/doctorStyles.php");
   include("../../Components/doctorComponents/nav-container.php");
-
   session_start();
 ?>
 <div class="bodyContainer">
@@ -14,7 +13,7 @@
     <div class="showsContainer">
         <div class="screenOptionContainer">
             <div class="nameOptionContainer">
-                <div class="option">Lista de Tus Pacientes</div>
+                <div class="option">Citas del Día de Hoy</div>
             </div>
             <div class="listPatientDate">
                 <form action="searchClientScreen.php" method="get">
@@ -26,24 +25,28 @@
                 <table class="tableP">
                     <tr class="tableTRP">
                         <th class="tableTHP">Nombre</th>
+                        <th class="tableTHP">Hora de la cita</th>
                         <th class="tableTHPL">Acción</th>
                     </tr>
                     <?php
                         include("../../DBConnection/connect.php");
                         $idEmpleado = $_SESSION['user'][2];
+                        //ver fecha actual
+                        $date = date('Y-m-d');
                         //ver cuantos registros coinciden con la busqueda
-                        $query = "SELECT COUNT(DISTINCT p.Id_Paciente) as total FROM pacientes p
-                            INNER JOIN citas c on p.Id_Paciente=c.Id_Paciente
-                            INNER JOIN doctores d ON c.Id_Doctor=d.Id_Doctor
-                            WHERE d.Id_Empleado = $idEmpleado";
+                        $sql = 'SELECT count(*) as total FROM pacientes p 
+                            INNER JOIN citas c ON p.Id_Paciente=c.Id_Paciente
+                            INNER JOIN doctores d ON c.Id_Doctor=d.Id_Doctor 
+                            INNER JOIN empleados e ON d.Id_Empleado=e.Id_Empleado
+                            WHERE e.Id_Empleado = "'.$idEmpleado.'" AND fecha_Cita = "'.$date.'"';
                         $total_register = null;
                         //obtener el numero de registros en la variable $total_register
-                        foreach($connection->query($query) as $row){
+                        foreach($connection->query($sql) as $row){
                             $total_register = $row['total'];
                         }
                         //numero de registros por pagina
                         $por_pagina=6;
-                        //comprobar en que página se encuetnra
+                        //comprobar en que página se encuentra
                         if(empty($_GET['page'])){
                             $pagina = 1;
                         }else{
@@ -54,30 +57,30 @@
                         //calcular el total de páginas que habrá
                         $total_paginas = ceil($total_register / $por_pagina);
                         //consulta que trae los datos de los registros desde la página $desde hasta $por_pagina
-                        if($result = $connection->query($query)){
+                        if($result = $connection->query($sql)){
                             if($result->fetchColumn() > 0){
-                                //consulta que permite obtener el los datos del paciente del doctor que haya iniciado sesión
-                                $query = "SELECT DISTINCT p.Id_Paciente, p.nombres, p.aPaterno, p.aMaterno FROM pacientes p
-                                    INNER JOIN citas c on p.Id_Paciente=c.Id_Paciente
-                                    INNER JOIN doctores d ON c.Id_Doctor=d.Id_Doctor
-                                    WHERE d.Id_Empleado = $idEmpleado
-                                    ORDER BY p.nombres, p.aPaterno, p.aMaterno ASC LIMIT $desde,$por_pagina";
+                                //consulta que permite obtener del paciente que tenga asignado el doctor
+                                $query = 'SELECT p.Id_Paciente, p.nombres, p.aPaterno, p.aMaterno, c.Id_Cita, c.hora_Cita FROM pacientes p 
+                                    INNER JOIN citas c ON p.Id_Paciente=c.Id_Paciente
+                                    INNER JOIN doctores d ON c.Id_Doctor = d.Id_Doctor 
+                                    INNER JOIN empleados e ON d.Id_Empleado = e.Id_Empleado
+                                    WHERE e.Id_Empleado = '.$idEmpleado.' AND c.fecha_Cita="'.$date.'" 
+                                    ORDER BY c.hora_cita ASC LIMIT '.$desde.','.$por_pagina;
+                                //bucle que permite crear una tabla con los datos obtenidos de forma dinamica
                                 foreach($connection->query($query) as $fila){
                                     ?>
                                     <tr class="tableTRP">
                                         <td class="tableTDP"><?php echo $fila['nombres']." ".$fila['aPaterno']." ".$fila['aMaterno'];?>
                                         </td>
+                                        <td class="tableTDP"><?php echo $fila['hora_Cita']?></td>
                                         <td class="tableTDPL">
-                                            <a class="link_a" href="SeePatientDataScreen.php?Id=<?php echo $fila['Id_Paciente'];?>">Ver datos</a>
-                                            |
-                                            <a class="link_a" href="SeePatientNotesScreen.php?Id=<?php echo $fila['Id_Paciente'];?>">Ver Notas</a>
+                                            <a class="link_a" href="AddNotePatientScreen.php?IdPat=<?php echo $fila['Id_Paciente'];?>
+                                                &IdDate=<?php echo $fila['Id_Cita'];?>&IdEmp=<?php echo $idEmpleado;?>">Agregar Nota</a>
                                         </td>
                                     </tr>
                                     <?php
                                 }
                             }
-                        }else{
-                            echo "<script>alert.('Error:')</script>";
                         }
                     ?>
                 </table>

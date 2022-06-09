@@ -11,6 +11,19 @@
     //comprobar que se ejecuto el comando y se eliminó con exito el paciente
     if($stmt->execute()){
       if($stmt->rowCount() > 0){
+
+        //query para eliminar las citas del paciente
+        $query = "DELETE FROM citas WHERE Id_Paciente = $idPatient";
+        if($res = $connection->query($query)){
+          if($res->fetchColumn() > 0){
+            ?>
+              <script>
+                  console.log("Paciente y citas eliminadas");
+              </script>
+            <?php
+          }
+        }
+
         ?>
           <script>
             //altera que avisa que el paciente fue eliminado con exito y entonces envia a la pantalla de la lista de pacientes

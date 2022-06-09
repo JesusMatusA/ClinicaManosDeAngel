@@ -1,60 +1,43 @@
 <?php 
     include 'DBConnection/connect.php';
 
-    if(isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+    // $var="Brian Alfonso Espinoza Santa Cruz";
+    // $nombre ="Brian Alfonso";
+    // $aPaterno = "Espinoza";
+    // $aMaterno = "Santa Cruz";
+    
+    // if(stristr($var, $nombre) !== false){
+    //     if(stristr($var, $aPaterno) !== false){
+    //         if(stristr($var, $aMaterno) !== false){
+    //             echo "nombre si, aPaterno si, aMaterno si";
+    //         }else{
+    //             echo "nombre si, aPaterno si, aMaterno no";
+    //         }
+    //     } else{
+    //         echo "nombre si, aPaterno no";
+    //     }
+    // } else{
+    //     echo "nombre no";
+    // }
 
-        $query = "SELECT * FROM usuarios WHERE usuario=:user AND contrasena=:pass";
-        $stmt = $connection->prepare($query);
-        $stmt->bindParam(':user', $username);
-        $stmt->bindParam(':pass', $password);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        $connection= null;
-        if($result){echo "si";}
-        if(!$result){echo "no";}
-    }
+    $date = date("Y-m-d");
+    // $sql = "select fecha_cita from citas where Id_Paciente = 178";
+
+    // if($res = $connection->query($sql)){
+    //     if($res->fetchColumn() > 0){
+    //         foreach($res as $fila){
+    //             if($fila[0] > $date){
+    //                 echo  $fila[0];
+    //             }
+    //         }
+    //     }
+    // }
+
+        echo $date;
+
+    
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <form class="form-container" method="post">
-            <div class="title">
-                <h1>Iniciar Sesión</h1>
-            </div>
-            <div>
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Nombre de Usuario"
-                        name="username"
-                    />
-                </div>
-                <div>
-                    <input
-                        type="password"
-                        placeholder="Contraseña"
-                        name="password"
-                    />
-                </div>
-                <div>
-                    <input
-                        type="submit"
-                        name="submit"
-                        value="Ingresar"
-                        class="button"
-                    />
-                </div>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
+<form action="">
+    <input type="text" placeholder="Nombre de Usuario" pattern="[A-Za-z]{1,}" required maxlength="10" />
+    <input type="submit" value="hola">
+</form>

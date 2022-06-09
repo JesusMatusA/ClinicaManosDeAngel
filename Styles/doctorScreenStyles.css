@@ -304,8 +304,10 @@ body {
 .txtarea {
     overflow-y: scroll;
     resize: none;
-    height: 25vh;
+    height: 50vh;
     font-size: 2vh;
+    text-align: justify;
+    white-space: normal;
 }
 /* .btnAddAppointment {
   margin-top: 1vh;
@@ -378,4 +380,94 @@ body {
 .textFooter {
     color: #f5f5f5;
     font-size: 2.2vh;
+}
+
+/* TABLA PACIENTES DE DOCTOR */
+
+.tableP {
+    border-collapse: collapse;
+    font-size: 2.3vh;
+    font-family: "arial";
+    width: 80%;
+    box-shadow: 2px 2px 2px;
+}
+
+.tableTHPL {
+    text-align: center;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.tableP .tableTHP {
+    text-align: justify;
+    padding: 15px;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.tableP .tableTRP:nth-child(odd) {
+    background-color: #fff;
+}
+
+.tableP .tableTRP {
+    background-color: #c1c1c1;
+}
+
+.tableP .tableTDP {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.tableTDPL {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* LINKS DE TABLA */
+.link_a {
+    color: #292c30;
+    text-decoration: none;
+}
+
+.link_a:hover {
+    color: #1555aa;
+}
+
+/* PAGINADOR */
+.paginador ul {
+    padding: 15px;
+    list-style: none;
+    background: #fff;
+    margin-top: 15px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.paginador a,
+.pageSelected {
+    color: #428bca;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    width: 1.2vh;
+}
+
+.paginador a:hover {
+    background-color: #1555aa;
+    color: #fff;
+}
+
+.pageSelected {
+    color: #ffff;
+    background: #428bca;
+    border: 1px solid #428bca;
+}
+
+.notItemOne option:first-child {
+    display: none;
 }
