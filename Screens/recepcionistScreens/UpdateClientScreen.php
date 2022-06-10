@@ -6,10 +6,10 @@
   //comprueba que haya una sesión
   session_start();
   if(!isset($_SESSION['user'])){
-    header("Location:../../Login.php");
+    header("Location:../../Index.php");
   } else{
     if(!(strcasecmp($_SESSION['user'][1], "recepcionista")==0)){
-      header("Location:../../Login.php");
+      header("Location:../../Index.php");
     }
   }
   if(empty($_GET['Id'])){

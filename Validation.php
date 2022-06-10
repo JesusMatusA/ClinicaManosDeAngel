@@ -29,7 +29,7 @@
                     ?>
                         <script>
                             alert("Error: Usuario y/o Contraseña incorrectos");
-                            location.href = "Login.php";
+                            location.href = "Index.php";
                         </script>
                     <?php
                 }

@@ -4,10 +4,10 @@
   include("../../Components/doctorComponents/nav-container.php");
   session_start();
   if(!isset($_SESSION['user'])){
-    header("Location:../../Login.php");
+    header("Location:../../Index.php");
   } else{
     if(!(strcasecmp($_SESSION['user'][1], "doctor")==0)){
-      header("Location:../../Login.php");
+      header("Location:../../Index.php");
     }
   }
 ?>
