@@ -2,9 +2,16 @@
   include("../../Components/requeriments.php");
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
-
   include("../../DBConnection/connect.php");
-
+  //comprueba que haya una sesión
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "recepcionista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
   if(empty($_GET['Id'])){
     header('Location: SeeClientScreen.php');
   }else{
@@ -23,7 +30,6 @@
     }
   }
 ?>
-
 <div class="bodyContainer">
     <div class="optionsContainer">
         <?php
@@ -40,16 +46,11 @@
                     <form action="../../functions/recepcionistFunctions/recepcionistClientUpdate.php" method="post" class="form">
                         <div class="form">
                             <input type="text" name="IdPatient" value="<?php echo $idPatient?>" hidden />
-                            <input type="text" placeholder="Nombres" value="<?php echo $name?>" name="name"
-                                autocomplete="none" class="inputTextDesign" required />
-                            <input type="text" placeholder="Apellido paterno" value="<?php echo $middlename?>"
-                                name="middlename" autocomplete="none" class="inputTextDesign" required />
-                            <input type="text" placeholder="Apellido materno" value="<?php echo $lastname?>"
-                                name="lastname" autocomplete="none" class="inputTextDesign" required />
-                            <input type="email" placeholder="Correo electrónico" value="<?php echo $email?>"
-                                name="email" autocomplete="none" class="inputTextDesign" required />
-                            <input type="tel" placeholder="Teléfono o Celular" value="<?php echo $telephone ?>"
-                                name="telephone" autocomplete="none" class="inputTextDesign" required />
+                            <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Nombres" value="<?php echo $name?>" name="name"autocomplete="none" class="inputTextDesign" required />
+                            <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido paterno" value="<?php echo $middlename?>"name="middlename" autocomplete="none" class="inputTextDesign" required />
+                            <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido materno" value="<?php echo $lastname?>"name="lastname" autocomplete="none" class="inputTextDesign" required />
+                            <input type="email" pattern="([a-zA-Z]|[0-9]){1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}(\s|.)" placeholder="Correo electrónico" value="<?php echo $email?>"name="email" autocomplete="none" class="inputTextDesign" required />
+                            <input type="number" placeholder="Teléfono o Celular" value="<?php echo $telephone ?>"name="telephone" autocomplete="none" class="inputTextDesign" required />
                             <input type="submit" name="submit" value="Actualizar" class="buttonAdd" />
                         </div>
                     </form>

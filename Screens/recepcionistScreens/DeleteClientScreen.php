@@ -3,11 +3,22 @@
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
   include("../../DBConnection/connect.php");
-
+  //comprueba que haya una sesión
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "recepcionista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
+  //comprobar que hayamos recibido una ID
   if(empty($_GET['Id'])){
     header('Location: SeeClientScreen.php');
   } else{
+    //guardo la ID
     $idPatient = $_GET['Id'];
+    //consulta de paciente con el ID
     $query = "SELECT nombres, aPaterno, aMaterno, correo, telefono FROM pacientes WHERE Id_Paciente = $idPatient";
     if($result = $connection->query($query)){
       if($result->fetchColumn() > 0){

@@ -3,11 +3,22 @@
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
   include("../../DBConnection/connect.php");
-
+  //comprueba que haya una sesión
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "recepcionista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
+  //comprobar que haya una ID
   if(empty($_GET['Id'])){
     header('Location: SeeDateScreen.php');
   }else{
+    //guardar la ID
     $idDate = $_GET['Id'];
+    //consulta con los datos del paciente y la cita usando la ID de la cita
     $query = "SELECT nombres, aPaterno, aMaterno, fecha_Cita, hora_Cita FROM citas c INNER JOIN pacientes p on c.Id_Paciente = p.Id_Paciente WHERE Id_Cita = $idDate";
     if($result = $connection->query($query)){
       if($result->fetchColumn() > 0){
@@ -20,7 +31,6 @@
     }
   }
 ?>
-
 <div class="bodyContainer">
     <div class="optionsContainer">
         <?php

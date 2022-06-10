@@ -11,6 +11,15 @@
         $existence = $_POST['existence'];
         $measure = $_POST['measure'];
 
+        if($stockmax == $stockmin){
+            ?>
+                <script>
+                    alert("El stock Máximo y Mínimo no pueden ser iguales");
+                    location.href = "../../Screens/storageScreens/AddProductScreen.php";
+                </script>
+            <?php
+        }
+
         $query = "INSERT INTO productos 
             VALUE(NULL, :code, :name, :description, :existence, :category, :subcategory, 
             :stockmin, :stockmax,  :measure)";

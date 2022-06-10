@@ -3,6 +3,15 @@
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
   include("../../DBConnection/connect.php");
+  //comprueba que haya una sesión
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "recepcionista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
   //comprobar que recibimos la ID del paciente
   if(empty($_GET['Id'])){
     //si no hay ID, entonces redirecciona a la pantalla de inicio
@@ -41,26 +50,25 @@
                     <form action="../../functions/recepcionistFunctions/recepcionistAddDate.php" method="post" class="form">
                         <div class="form">
                             <input type="text" class="inputTextDesign" name="idPatient" value="<?php echo $idPatient?>" hidden/>
-                            <input type="text" class="inputTextDesign" value="<?php echo $nameComplete?>" disabled/>
+                            <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" class="inputTextDesign" value="<?php echo $nameComplete?>" disabled/>
                             <select name="idDoctor" class="inputTextDesign notItemOne" required>
                             <?php
                               $sql = "SELECT d.Id_Doctor, nombres, aPaterno, aMaterno FROM empleados e INNER JOIN doctores d ON e.Id_Empleado = d.Id_Empleado";
                               echo "<option selected>Doctor</option>";
                               if($res = $connection->query($sql)){
-                                  if($res->fetchColumn() > 0){
-                                    foreach($connection->query($sql) as $row){
-                                      ?>
-                                        <option value="<?php echo $row['Id_Doctor']?>"> <?php echo $row['nombres']." ".$row['aPaterno']." ".$row['aMaterno'];?> </option>
-                                      <?php
+                                if($res->fetchColumn() > 0){
+                                  foreach($connection->query($sql) as $row){
+                                    ?>
+                                      <option value="<?php echo $row['Id_Doctor']?>"> <?php echo $row['nombres']." ".$row['aPaterno']." ".$row['aMaterno'];?> </option>
+                                    <?php
                                   }
                                 }
                               }
                             ?>
                             </select>
-                            <input type="date" name="patientDate" class="inputTextDesign" required />
+                            <input type="date" name="patientDate" class="inputTextDesign" required/>
                             <input type="time" name="patientTimeDate" class="inputTextDesign" required/>
-                            <textarea placeholder="Diagnóstico" name="Diagnosis"
-                                class="inputTextDesign Diagnosis" required></textarea>
+                            <textarea maxlength="1000" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Diagnóstico" name="Diagnosis" class="inputTextDesign Diagnosis" required></textarea>
                             <input type="submit" name="submit" value="guardar" class="buttonAdd" />
                         </div>
                     </form>

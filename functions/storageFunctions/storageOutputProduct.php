@@ -6,8 +6,8 @@
         $existence = $_POST['existence'];
         $stockMin = $_POST['stockMin'];
         $totalExistence = $existence - $output;
-
-        if($totalExistence <= $stockMin){
+        
+        if(($totalExistence <= $stockMin)){
             ?>
                 <script>
                     alert("Advertencia: Cantidad de producto baja, es necesario surtir...");

@@ -2,6 +2,15 @@
   include("../../Components/requeriments.php");
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
+  //comprueba que haya una sesión
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "recepcionista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
 ?>
 <div class="bodyContainer">
     <div class="optionsContainer">
@@ -13,10 +22,6 @@
         <div class="screenOptionContainer">
             <div class="nameOptionContainer">
                 <div class="option">Bienvenid@</div>
-            </div>
-            <div class="formContainer">
-                <div class="formAdd">
-                </div>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <div class="menuContainer">
     <div class="userContainer">
         <div class="imgRecepcionistContainer">
-            <img src="../../img/logoSoloBlanco.png" alt="" class="recepcionistLogo" />
+            <img src="../../img/logoSoloBlanco.png" alt="Logo" class="recepcionistLogo" />
         </div>
         <div class="userType">Doctor</div>
     </div>

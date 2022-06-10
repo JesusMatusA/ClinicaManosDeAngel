@@ -2,6 +2,15 @@
   include("../../Components/requeriments.php");
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
+  //comprueba que haya una sesión
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "recepcionista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
 ?>
 <div class="bodyContainer">
     <div class="optionsContainer">
@@ -23,7 +32,7 @@
                     }
                 ?>
                 <form action="searchDateScreen.php" method="get">
-                    <input type="search" name="search" placeholder="Buscar por nombre" value="<?php echo $busqueda; ?>">
+                    <input type="search" maxlength="30" pattern="[a-zA-ZÁ-ÿ]{1,}" name="search" placeholder="Buscar por nombre" value="<?php echo $busqueda; ?>">
                     <button type="submit" name="submit">Buscar</button>
                 </form>
             </div>
