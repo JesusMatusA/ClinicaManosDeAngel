@@ -287,7 +287,7 @@ body {
 
 .inputTextDesign {
     width: 50vh;
-    height: 4.8vh;
+    height: 4.2vh;
     margin-bottom: 1.5vh;
     background-color: #b1dae7;
     outline: 0;
@@ -295,7 +295,7 @@ body {
     border-color: #1555aa;
     border-radius: 3px;
     padding: 1vh;
-    font-size: 2.3vh;
+    font-size: 2vh;
     box-shadow: 2px 2px 2px;
 }
 
@@ -303,11 +303,10 @@ body {
     border-color: #234567;
 }
 
-.Diagnosis {
+.textarea {
     overflow-y: scroll;
     resize: none;
-    height: 25vh;
-    font-size: 2vh;
+    height: 7vh;
 }
 
 .btnPhoto {
@@ -497,4 +496,61 @@ body {
 
 .notItemOne option:first-child {
     display: none;
+}
+
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* tabla citas */
+.table {
+    border-collapse: collapse;
+    font-size: 2.3vh;
+    font-family: "arial";
+    width: 80%;
+    box-shadow: 2px 2px 2px;
+}
+
+.tableTH {
+    text-align: center;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.table .tableTH {
+    text-align: justify;
+    padding: 15px;
+    background: #1555aa;
+    color: #ffff;
+}
+
+.table .tableTR:nth-child(odd) {
+    background-color: #fff;
+}
+
+.table .tableTR {
+    background-color: #c1c1c1;
+}
+
+.table .tableTD {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.tableTD {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* LINKS de la tabla */
+
+.link_a {
+    color: #292c30;
+    text-decoration: none;
+}
+
+.link_a:hover {
+    color: #1555aa;
 }

@@ -41,13 +41,11 @@
             <div class="formContainer">
                 <div class="formAdd">
                     <form action="../../functions/doctorFunctions/doctorAddNotePatient.php" method="post" class="form">
-                        <div class="form">
-                            <input type="number" name="IdDate" value="<?php echo $idDate?>" hidden />
-                            <input type="number" name="IdEmp" value="<?php echo $idEmp?>" hidden />
-                            <input type="text" placeholder="Nombres" value="<?php echo $name." ".$middlename." ".$lastname?>" disabled class="inputTextDesign"/>
-                            <textarea maxlength="255" placeholder="Nota sobre el paciente" name="Notes" class="inputTextDesign txtarea" required></textarea>
-                            <input type="submit" name="submit" value="Actualizar" class="buttonAdd" />
-                        </div>
+                      <input type="number" name="IdDate" value="<?php echo $idDate?>" hidden />
+                      <input type="number" name="IdEmp" value="<?php echo $idEmp?>" hidden />
+                      <input type="text" placeholder="Nombres" value="<?php echo $name." ".$middlename." ".$lastname?>" disabled class="inputTextDesign"/>
+                      <textarea maxlength="255" placeholder="Nota sobre el paciente" name="Notes" class="inputTextDesign txtarea" required></textarea>
+                      <input type="submit" name="submit" value="Actualizar" class="buttonAdd" />
                     </form>
                 </div>
             </div>

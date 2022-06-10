@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../Styles/recepcionistScreenStyles.css" />
+<link rel="stylesheet" href="../../Styles/storageScreenStyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
