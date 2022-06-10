@@ -22,8 +22,8 @@
         </button>
     </div>
     <div class="logoutContainer">
-        <button class="btnLogout">
-            Log Out
+        <button class="btnLogout" id="btnLogout">
+            Cerrar Sesión
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
             </div>

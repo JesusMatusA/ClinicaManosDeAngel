@@ -27,11 +27,11 @@
                 <div class="formAdd">
                     <form action="../../functions/recepcionistFunctions/recepcionistAddClient.php" method="post" class="form">
                         <div class="form">
-                            <input type="text"  pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Nombres" name="name" class="inputTextDesign" required autocomplete="none" maxlength="30" />
-                            <input type="text"  pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido paterno" name="middlename" class="inputTextDesign" required autocomplete="none" maxlength="20" />
-                            <input type="text"  pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido materno" name="lastname" class="inputTextDesign" required autocomplete="none" maxlength="20" />
-                            <input type="email" pattern="([a-zA-Z]|[0-9]){1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}(\s|.)" placeholder="Correo electrónico" name="email" class="inputTextDesign" required autocomplete="none" maxlength="30" />
-                            <input type="tel"   pattern="[0-9]{1,}" placeholder="Teléfono Celular" name="phone" class="inputTextDesign" required autocomplete="none" maxlength="10" />
+                            <input type="text"  title="Sólo carácteres alfabeticos" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Nombres" name="name" class="inputTextDesign" required autocomplete="none" maxlength="30" />
+                            <input type="text"  title="Sólo carácteres alfabeticos" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido paterno" name="middlename" class="inputTextDesign" required autocomplete="none" maxlength="20" />
+                            <input type="text"  title="Sólo carácteres alfabeticos" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido materno" name="lastname" class="inputTextDesign" required autocomplete="none" maxlength="20" />
+                            <input type="email" title="Debe seguir este formato: Nombre@ServidorDeCorreo.Dominio" pattern="([a-zA-Z]|[0-9]){1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}(\s|.)" placeholder="Correo electrónico" name="email" class="inputTextDesign" required autocomplete="none" maxlength="30" />
+                            <input type="tel" title="Sólo números" maxlength="10" pattern="[0-9]{1,}" placeholder="Teléfono Celular" name="phone" class="inputTextDesign number" required autocomplete="none" maxlength="10" />
                             <input type="submit" name="submit" value="Registrar" class="buttonAdd">
                         </div>
                     </form>

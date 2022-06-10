@@ -5,6 +5,13 @@
   include("../../DBConnection/connect.php");
 
   session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "doctor")==0)){
+      header("Location:../../Login.php");
+    }
+  }
 
   if(empty($_GET['Id'])){
     header('Location: SeePatientScreen.php');

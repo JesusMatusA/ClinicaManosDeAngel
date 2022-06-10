@@ -1,11 +1,11 @@
 <?php
-    if(!empty($_POST)){
-        if(preg_match('/[a-zA-Z]{1,}/',$_POST['textarea'])){
-            echo "si";
-        }else{
-            echo "no";
-        }
-    }
+    // if(!empty($_POST)){
+    //     if(preg_match('/[a-zA-Z]{1,}/',$_POST['textarea'])){
+    //         echo "si";
+    //     }else{
+    //         echo "no";
+    //     }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@
 </head>
 <body>
     <form action="" method="post">
-        <textarea name="textarea"></textarea>
+        <textarea pattern="[a-zA-ZÁ-ÿ]{1,}" name="textarea"></textarea>
         <input type="submit" name="submit">
     </form>
 </body>

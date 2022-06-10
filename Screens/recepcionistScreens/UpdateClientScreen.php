@@ -46,11 +46,11 @@
                     <form action="../../functions/recepcionistFunctions/recepcionistClientUpdate.php" method="post" class="form">
                         <div class="form">
                             <input type="text" name="IdPatient" value="<?php echo $idPatient?>" hidden />
-                            <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Nombres" value="<?php echo $name?>" name="name"autocomplete="none" class="inputTextDesign" required />
-                            <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido paterno" value="<?php echo $middlename?>"name="middlename" autocomplete="none" class="inputTextDesign" required />
-                            <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Apellido materno" value="<?php echo $lastname?>"name="lastname" autocomplete="none" class="inputTextDesign" required />
-                            <input type="email" pattern="([a-zA-Z]|[0-9]){1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}(\s|.)" placeholder="Correo electrónico" value="<?php echo $email?>"name="email" autocomplete="none" class="inputTextDesign" required />
-                            <input type="number" placeholder="Teléfono o Celular" value="<?php echo $telephone ?>"name="telephone" autocomplete="none" class="inputTextDesign" required />
+                            <input type="text" title="Sólo carácteres alfabeticos" pattern="[a-zA-ZÁ-ÿ]{1,}"  placeholder="Nombres" value="<?php echo $name?>" name="name"autocomplete="none" class="inputTextDesign" required />
+                            <input type="text" title="Sólo carácteres alfabeticos" pattern="[a-zA-ZÁ-ÿ]{1,}"  placeholder="Apellido paterno" value="<?php echo $middlename?>"name="middlename" autocomplete="none" class="inputTextDesign" required />
+                            <input type="text" title="Sólo carácteres alfabeticos" pattern="[a-zA-ZÁ-ÿ]{1,}"  placeholder="Apellido materno" value="<?php echo $lastname?>"name="lastname" autocomplete="none" class="inputTextDesign" required />
+                            <input type="email" title="Debe seguir este formato: Nombre@ServidorDeCorreo.Dominio" pattern="([a-zA-Z]|[0-9]){1,}@[a-zA-Z]{1,}.[a-zA-Z]{1,}(\s|.)" placeholder="Correo electrónico" value="<?php echo $email?>"name="email" autocomplete="none" class="inputTextDesign" required />
+                            <input type="tel" title="Sólo números" maxlength="10" pattern="[0-9]{1,}"  value="<?php echo $telephone ?>"name="telephone" autocomplete="none" class="inputTextDesign" required />
                             <input type="submit" name="submit" value="Actualizar" class="buttonAdd" />
                         </div>
                     </form>

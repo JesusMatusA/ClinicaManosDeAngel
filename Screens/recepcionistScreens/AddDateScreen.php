@@ -12,22 +12,14 @@
       header("Location:../../Login.php");
     }
   }
-  //comprobar que recibimos la ID del paciente
   if(empty($_GET['Id'])){
-    //si no hay ID, entonces redirecciona a la pantalla de inicio
     header('Location: firstScreen.php');
   }else{
-    //si hay ID, entonces la guardamos en una variable llamada $idPatient
     $idPatient = $_GET['Id'];
-    //creamos una consulta que nos traiga el nombre del paciente usando su ID
     $query = "SELECT nombres, aPaterno, aMaterno FROM pacientes WHERE Id_Paciente = $idPatient";
-    //ejecutamos la consulta y guardamos el resultado en $result
     if($result = $connection->query($query)){
-      //comprobamos que el resultado contenga datos
       if($result->fetchColumn() > 0){
-        //ejecutamos otra vez el query para poder usar los datos
         foreach($connection->query($query) as $fila){
-          //concatenamos el resultado y lo guardamos en la variable $nameComplete
           $nameComplete = $fila['nombres']." ".$fila['aPaterno']." ".$fila['aMaterno'];
         }
       }
@@ -53,8 +45,10 @@
                             <input type="text" pattern="[a-zA-ZÁ-ÿ]{1,}" class="inputTextDesign" value="<?php echo $nameComplete?>" disabled/>
                             <select name="idDoctor" class="inputTextDesign notItemOne" required>
                             <?php
-                              $sql = "SELECT d.Id_Doctor, nombres, aPaterno, aMaterno FROM empleados e INNER JOIN doctores d ON e.Id_Empleado = d.Id_Empleado";
-                              echo "<option selected>Doctor</option>";
+                              $sql = "SELECT d.Id_Doctor, nombres, aPaterno, aMaterno FROM empleados e 
+                                INNER JOIN doctores d ON e.Id_Empleado = d.Id_Empleado 
+                                ORDER BY nombres, aPaterno, aMaterno";
+                              echo "<option value='0' selected>Doctor</option>";
                               if($res = $connection->query($sql)){
                                 if($res->fetchColumn() > 0){
                                   foreach($connection->query($sql) as $row){
@@ -68,7 +62,7 @@
                             </select>
                             <input type="date" name="patientDate" class="inputTextDesign" required/>
                             <input type="time" name="patientTimeDate" class="inputTextDesign" required/>
-                            <textarea maxlength="1000" pattern="[a-zA-ZÁ-ÿ]{1,}" placeholder="Diagnóstico" name="Diagnosis" class="inputTextDesign Diagnosis" required></textarea>
+                            <textarea maxlength="1000" placeholder="Diagnóstico" name="Diagnosis" class="inputTextDesign Diagnosis" required></textarea>
                             <input type="submit" name="submit" value="guardar" class="buttonAdd" />
                         </div>
                     </form>

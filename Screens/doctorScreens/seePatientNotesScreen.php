@@ -5,6 +5,13 @@
   include("../../DBConnection/connect.php");
 
   session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "doctor")==0)){
+      header("Location:../../Login.php");
+    }
+  }
   if(empty($_GET['Id'])){
     header('Location: SeePatientScreen.php');
   }else{
@@ -21,12 +28,6 @@
         <div class="screenOptionContainer">
             <div class="nameOptionContainer">
                 <div class="option">Notas del Paciente</div>
-            </div>
-            <div class="listPatientDate">
-                <form action="searchClientScreen.php" method="get">
-                    <input type="search" name="search" placeholder="Buscar por nombre">
-                    <button type="submit" name="submit">Buscar</button>
-                </form>
             </div>
             <div class="formContainer">
                 <table class="tableP">
@@ -95,8 +96,8 @@
                         if($pagina != 1)
                         {
                     ?>
-                    <li><a href="?page=<?php echo 1;?>"> << </a></li>
-                    <li><a href="?page=<?php echo ($pagina-1);?>"> < </a></li>
+                    <li><a href="?Id=<?php echo $idPatient;?>&page=<?php echo 1;?>"> << </a></li>
+                    <li><a href="?Id=<?php echo $idPatient;?>&page=<?php echo ($pagina-1);?>"> < </a></li>
                     <?php 
                         }
                         //coloca dinamicamente el numero de paginas en el paginador
@@ -105,13 +106,13 @@
                             { 
                                 echo '<li class="pageSelected">'.$i.'</a></li>';
                             }else{
-                                echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
+                                echo '<li><a href="?Id='.$idPatient.'&page='.$i.'">'.$i.'</a></li>';
                             }
                         }
                         if($pagina != $total_paginas){
                     ?>
-                    <li><a href="?page=<?php echo ($pagina+1);?>"> > </a></li>
-                    <li><a href="?page=<?php echo $total_paginas;?>"> >> </a></li>
+                    <li><a href="?Id=<?php echo $idPatient;?>&page=<?php echo ($pagina+1);?>"> > </a></li>
+                    <li><a href="?Id=<?php echo $idPatient;?>&page=<?php echo $total_paginas;?>"> >> </a></li>
                     <?php
                         }
                     ?>

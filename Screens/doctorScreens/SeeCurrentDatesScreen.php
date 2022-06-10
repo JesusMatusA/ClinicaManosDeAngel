@@ -3,6 +3,13 @@
   include("../../Components/doctorComponents/doctorStyles.php");
   include("../../Components/doctorComponents/nav-container.php");
   session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "doctor")==0)){
+      header("Location:../../Login.php");
+    }
+  }
 ?>
 <div class="bodyContainer">
     <div class="optionsContainer">
@@ -14,12 +21,6 @@
         <div class="screenOptionContainer">
             <div class="nameOptionContainer">
                 <div class="option">Citas del Día de Hoy</div>
-            </div>
-            <div class="listPatientDate">
-                <form action="searchClientScreen.php" method="get">
-                    <input type="search" name="search" placeholder="Buscar por nombre">
-                    <button type="submit" name="submit">Buscar</button>
-                </form>
             </div>
             <div class="formContainer">
                 <table class="tableP">

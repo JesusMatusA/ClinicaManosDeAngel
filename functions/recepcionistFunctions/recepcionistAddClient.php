@@ -6,6 +6,52 @@ if(!empty($_POST)){
     $lastname = ucfirst(strtolower($_POST['lastname']));
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+
+    $sql = "SELECT COUNT(*) FROM pacientes WHERE nombres=:name AND aPaterno=:middlename AND aMaterno=:lastname";
+    $st = $connection->prepare($sql);
+    $st->bindParam(":name", $name, PDO::PARAM_STR);
+    $st->bindParam(":middlename", $middlename, PDO::PARAM_STR);
+    $st->bindParam(":lastname", $lastname, PDO::PARAM_STR);
+    if($st->execute()){
+      $result = $st->fetch(PDO::FETCH_ASSOC);
+      if($result['total'] > 0){
+        ?>
+          <script>
+            alert("Error: Ya hay un paciente con ese nombre");
+            location.href="../../Screens/recepcionistScreens/AddClientScreen.php";
+          </script>
+        <?php
+      }
+    }
+    $sql = "SELECT COUNT(*) FROM pacientes WHERE correo =:email";
+    $st = $connection->prepare($sql);
+    $st->bindParam(":email", $email, PDO::PARAM_STR);
+    if($st->execute()){
+      $result = $st->fetch(PDO::FETCH_ASSOC);
+      if($result['total'] > 0){
+        ?>
+          <script>
+            alert("Error: El correo ya pertenece a un paciente");
+            location.href="../../Screens/recepcionistScreens/AddClientScreen.php";
+          </script>
+        <?php
+      }
+    }
+    $sql = "SELECT COUNT(*) FROM pacientes WHERE telefono=:phone";
+    $st = $connection->prepare($sql);
+    $st->bindParam(":phone", $phone, PDO::PARAM_INT);
+    if($st->execute()){
+      $result = $st->fetch(PDO::FETCH_ASSOC);
+      if($result['total'] > 0){
+        ?>
+          <script>
+            alert("Error: El teléfono ya pertenece a un paciente");
+            location.href="../../Screens/recepcionistScreens/AddClientScreen.php";
+          </script>
+        <?php
+      }
+    }
+
     //preparamos la insercion del paciente
     $query = "INSERT INTO pacientes(Id_Paciente, nombres, aPaterno, aMaterno, correo, telefono) VALUES(null, :name, :middlename, :lastname, :email, :phone)";
     $stmt = $connection->prepare($query);

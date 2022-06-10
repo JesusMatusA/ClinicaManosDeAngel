@@ -3,7 +3,14 @@
   include("../../Components/storageComponents/storageStyles.php");
   include("../../Components/storageComponents/nav-container.php");
   include("../../DBConnection/connect.php");
-
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "almacenista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
    if(empty($_GET['Code'])){
     header('Location: SeeProductSscreen.php');
    } else{

@@ -5,6 +5,7 @@
         $output = $_POST['output'];
         $existence = $_POST['existence'];
         $stockMin = $_POST['stockMin'];
+
         $totalExistence = $existence - $output;
         
         if(($totalExistence <= $stockMin)){

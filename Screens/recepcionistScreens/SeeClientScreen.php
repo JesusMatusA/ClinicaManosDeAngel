@@ -23,12 +23,6 @@
             <div class="nameOptionContainer">
                 <div class="option">Lista de Pacientes</div>
             </div>
-            <div class="listPatientDate">
-                <form action="searchClientScreen.php" method="get">
-                    <input type="search" maxlength="30" pattern="[a-zA-ZÁ-ÿ]{1,}" name="search" placeholder="Buscar por nombre">
-                    <button type="submit" name="submit">Buscar</button>
-                </form>
-            </div>
             <div class="formContainer">
                 <table class="tableC">
                     <tr class="tableTRC">
@@ -64,7 +58,7 @@
                             if($result->fetchColumn() > 0){
 
                                 $query = "SELECT Id_Paciente, nombres, aPaterno, aMaterno, correo, telefono FROM pacientes 
-                                    ORDER BY Id_Paciente ASC LIMIT $desde,$por_pagina";
+                                    ORDER BY nombres, aPaterno, aMaterno ASC LIMIT $desde,$por_pagina";
                                 foreach($connection->query($query) as $fila){
                                     ?>
                                     <tr class="tableTRC">

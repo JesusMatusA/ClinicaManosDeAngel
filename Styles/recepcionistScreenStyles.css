@@ -498,3 +498,9 @@ body {
 .notItemOne option:first-child {
     display: none;
 }
+
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

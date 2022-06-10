@@ -3,7 +3,14 @@
   include("../../Components/storageComponents/storageStyles.php");
   include("../../Components/storageComponents/nav-container.php");
   include("../../DBConnection/connect.php");
-
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "almacenista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
    if(empty($_GET['Code'])){
     header('Location: SeeProductScreen.php');
    } else{
@@ -35,15 +42,15 @@
                 <div class="formAdd">
                     <form class="formG" action="../../functions/storageFunctions/storageOutputProduct.php" method="post">
                       <div class="formG">
-                        <input type="text"  value="<?php echo $productCode;?>"  name="productCode" hidden/>
-                        <input type="text"  value="<?php echo $existence;?>"     name="existence" hidden/>
-                        <input type="text"  value="<?php echo $stockMin;?>"     name="stockMin" hidden/>
-                        <input type="text"  value="<?php echo $productCode;?>" class="inputTextDesign" disabled/>
-                        <input type="text"  value="<?php echo $name;?>"        class="inputTextDesign" disabled/>
-                        <input type="text"  value="<?php echo $existence;?>"    class="inputTextDesign" disabled/>
-                        <input type="text"  value="<?php echo $stockMin;?>"     class="inputTextDesign" disabled/>
+                        <input type="number"  value="<?php echo $productCode;?>"  name="productCode" hidden/>
+                        <input type="number"  value="<?php echo $existence;?>"    name="existence" hidden/>
+                        <input type="number"  value="<?php echo $stockMin;?>"     name="stockMin" hidden/>
+                        <input type="number"  value="<?php echo $productCode;?>"  class="inputTextDesign" disabled/>
+                        <input type="text"    value="<?php echo $name;?>"         class="inputTextDesign" disabled/>
+                        <input type="number"  value="<?php echo $existence;?>"    class="inputTextDesign" disabled/>
+                        <input type="number"  value="<?php echo $stockMin;?>"     class="inputTextDesign" disabled/>
                         <input type="number" maxlength="3" pattern="[0-9]{1,}" name="output" placeholder="Cantidad de salida" min="1" max="<?php echo $existence;?>" class="inputTextDesign"/>
-                        <input type="submit"        name="submit" value="Guardar" class="buttonAdd" />
+                        <input type="submit" name="submit" value="Guardar" class="buttonAdd" />
                       </div>
                     </form>
                 </div>

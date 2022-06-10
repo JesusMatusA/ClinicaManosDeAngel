@@ -5,6 +5,13 @@
   include("../../DBConnection/connect.php");
 
   session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "doctor")==0)){
+      header("Location:../../Login.php");
+    }
+  }
   //comprobar que en la url tenemos el ID del paciente
   if(empty($_GET['IdPatient']) & empty($_GET['IdNote'])){
     //si no se encuentran los tres datos en la url entonces redirecciona a la pantalla de ver pacientes

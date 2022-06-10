@@ -2,6 +2,14 @@
   include("../../Components/requeriments.php ");
   include("../../Components/storageComponents/storageStyles.php");
   include("../../Components/storageComponents/nav-container.php");
+  session_start();
+  if(!isset($_SESSION['user'])){
+    header("Location:../../Login.php");
+  } else{
+    if(!(strcasecmp($_SESSION['user'][1], "almacenista")==0)){
+      header("Location:../../Login.php");
+    }
+  }
 ?>
 <div class="bodyContainer">
     <div class="optionsContainer">

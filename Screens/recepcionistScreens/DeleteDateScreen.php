@@ -47,12 +47,9 @@
                     <form action="../../functions/recepcionistFunctions/recepcionistDateDelete.php" method="post" class="form">
                         <div class="form">
                             <input name="idDate" value="<?php echo $idDate ?>" hidden />
-                            <input placeholder="Nombre(s)" value="<?php echo $name?>" class="inputTextDesign"
-                                disabled />
-                            <input type="date" placeholder="Fecha" disabled class="inputTextDesign"
-                                value="<?php echo $fecha?>" />
-                            <input type="time" placeholder="Hora" disabled value="<?php echo $hora?>"
-                                class="inputTextDesign" />
+                            <input type="text" value="<?php echo $name;?>" class="inputTextDesign" disabled />
+                            <input type="date" value="<?php echo $fecha?>" class="inputTextDesign" disabled />
+                            <input type="time"  value="<?php echo $hora;?>" class="inputTextDesign" disabled />
                             <input type="submit" name="submit" value="Eliminar" class="buttonAdd" />
                         </div>
                     </form>

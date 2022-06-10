@@ -30,7 +30,7 @@
     </div>
     <div class="logoutContainer">
         <button id="btnLogout" class="btnLogout">
-            Log Out
+            Cerrar Sesión
             <div class="arrow-wrapper">
                 <div class="arrow"></div>
             </div>

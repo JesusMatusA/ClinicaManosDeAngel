@@ -23,12 +23,6 @@
             <div class="nameOptionContainer">
                 <div class="option">Lista de Citas</div>
             </div>
-            <div class="listPatientDate">
-                <form action="searchDateScreen.php" method="get">
-                    <input type="search" pattern="[a-zA-ZÁ-ÿ]{1,}" name="search" placeholder="Buscar por nombre">
-                    <button type="submit" name="submit">Buscar</button>
-                </form>
-            </div>
             <div class="formContainer">
                 <table class="tableD">
                     <tr class="tableTRD">
@@ -83,7 +77,7 @@
                                     <td class="tableTDDL">
                                         <a class="link_a" href="UpdateDateScreen.php?Id=<?php echo $fila['Id_Cita']?>">Reagendar</a>
                                         |
-                                        <a class="link_a" href="DeleteDateScreen.php?Id=<?php echo $fila['Id_Cita']?>">Eliminar</a>
+                                        <a class="link_a" href="DeleteDateScreen.php?Id=<?php echo $fila['Id_Cita']?>&page=1">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php

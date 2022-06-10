@@ -4,7 +4,6 @@
   if(!empty($_POST)){
     //obtener la id de la cita a eliminar
     $idDate = $_POST['idDate'];
-    //crear la consulta para eliminar la cita y ejecutarla
     $query = "DELETE FROM citas WHERE Id_Cita = :idDate";
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':idDate', $idDate, PDO::PARAM_INT);
