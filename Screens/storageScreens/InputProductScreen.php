@@ -34,8 +34,8 @@
             </div>
             <div class="formContainer">
                 <div class="formAdd">
-                    <form class="form" action="../../functions/storageFunctions/storageInputProduct.php" method="post">
-                      <div class="form">
+                    <form class="formG" action="../../functions/storageFunctions/storageInputProduct.php" method="post">
+                      <div class="formG">
                         <input type="text"  value="<?php echo $productCode;?>"  name="productCode" hidden/>
                         <input type="text"  value="<?php echo $productCode;?>" class="inputTextDesign" disabled/>
                         <input type="text"  value="<?php echo $name;?>"        class="inputTextDesign" disabled/>
