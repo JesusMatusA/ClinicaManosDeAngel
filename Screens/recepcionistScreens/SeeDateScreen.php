@@ -39,7 +39,7 @@
                             $total_register = $row['total'];
                         }
                         //numero de registros por pagina
-                        $por_pagina=6;
+                        $por_pagina=10;
                         //comprobar en que página se encuentra
                         if(empty($_GET['page'])){
                             $pagina = 1;
@@ -58,7 +58,7 @@
                             INNER JOIN citas c on p.Id_Paciente = c.Id_Paciente 
                             INNER JOIN doctores o ON c.Id_Doctor = o.Id_Doctor
                             INNER JOIN empleados d ON o.Id_Empleado = d.Id_Empleado
-                            ORDER BY p.Id_Paciente ASC LIMIT $desde,$por_pagina";
+                            ORDER BY c.fecha_Cita, c.hora_Cita ASC LIMIT $desde,$por_pagina";
                         //generar las filas de la tabla
                         foreach($connection->query($query) as $fila){
                             ?>
