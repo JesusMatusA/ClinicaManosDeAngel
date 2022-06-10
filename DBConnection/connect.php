@@ -1,7 +1,7 @@
 <?php
     date_default_timezone_set("America/Phoenix");
     $host = "localhost";
-    $bd =   "clinicamanosdeangel";
+    $bd =   "clinicamanosdeangel3";
     $user=  "root";
     $pass=  "";
 

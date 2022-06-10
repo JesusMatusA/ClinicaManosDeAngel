@@ -64,11 +64,11 @@
             <div class="login-container">
                 <div class="input-container">
                     <span id="icon" class="material-icons-outlined">account_circle</span>
-                    <input type="text" placeholder="Nombre de Usuario" name="username" pattern="[a-zA-Z]{1,}" required maxlength="10" />
+                    <input type="text" placeholder="Nombre de Usuario" name="username" pattern="[a-zA-Z]{1,}" required maxlength="10" autocomplete="off"/>
                 </div>
                 <div class="input-container">
                     <span id="icon" class="material-icons-outlined">key</span>
-                    <input type="password" placeholder="Contraseña" name="password" pattern="[0-9]{1,}" required madxlength="6" />
+                    <input type="password" placeholder="Contraseña" name="password" pattern="[0-9]{1,}" required madxlength="6"autocomplete="off"/>
                 </div>
                 <div class="input-button">
                     <input type="submit" name="submit" value="Ingresar" class="button" />
