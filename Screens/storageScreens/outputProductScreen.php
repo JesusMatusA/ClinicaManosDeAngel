@@ -33,8 +33,8 @@
             </div>
             <div class="formContainer">
                 <div class="formAdd">
-                    <form class="form" action="../../functions/storageFunctions/storageOutputProduct.php" method="post">
-                      <div class="form">
+                    <form class="formG" action="../../functions/storageFunctions/storageOutputProduct.php" method="post">
+                      <div class="formG">
                         <input type="text"  value="<?php echo $productCode;?>"  name="productCode" hidden/>
                         <input type="text"  value="<?php echo $existence;?>"     name="existence" hidden/>
                         <input type="text"  value="<?php echo $stockMin;?>"     name="stockMin" hidden/>
